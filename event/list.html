@@ -49,6 +49,22 @@
 
       console.log(products[1]); // { id: 1, price: 50000, title: 'Springfild Shirt' }
       console.log(products[1].title); //
+
+      // products 값 화면 출력
+      // 1. 디자인 영역 가져오기
+      // 2. products 배열을 삽입
+
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, idx) => {
+        // 인덱스 값도 불러올 수 있음
+        console.log(card, ' ', idx);
+
+        console.log(card.querySelector('h5').innerHTML); // card 안에 h5
+        console.log(card.querySelector('p > span').innerHTML); // card 안에 p 안에 span
+
+        card.querySelector('h5').innerHTML = products[idx].title;
+        card.querySelector('p > span').innerHTML = products[idx].price;
+      });
     </script>
   </body>
 </html>
