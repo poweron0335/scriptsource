@@ -43,22 +43,31 @@
       // 추측횟수 변수 선언
       let usercount = 0;
 
+      // 버튼 찾아오기
       const button = document.querySelector('button');
-      button.addEventListener('click', (e) => {
+      // 버튼 클릭 시 이벤트 활성화
+      button.addEventListener('click', () => {
+        // 사용자에게 입력받을 숫자 찾아오기
         const idnum = document.querySelector('#num').value;
-
+        // result 값을 초기화
         let result = '';
+        // 버튼을 누를 때마다 usercount +1씩 증가
         usercount++;
 
+        // 만약에 임의의 수와 사용자가 입력한 숫자가 같은 경우 '정답입니다.'
+        // 생성된 임의의 숫자보다 사용자가 입력한 숫자가 작으면 '더 큰 수를 입력하세요'
+        //                                            크면 ' 더 작은 수를 입력하세요'
+        // result 값에 출력
         if (idnum == num) {
           result = '정답입니다.';
-          e.target.disabled = 'true';
         } else if (idnum < num) {
           result = '더 큰 수를 입력하세요';
         } else if (idnum > num) {
           result = '더 작은 수를 입력하세요';
         }
+        // count 본연의 값을 가져와서 result에 출력
         document.querySelector('#count').value = result;
+        // hint 본연의 값을 가져와서 result에 출력
         document.querySelector('#hint').value = result;
       });
     </script>

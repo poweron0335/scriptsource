@@ -10,44 +10,61 @@
     글자색 : gray
     손모양
     옆으로 배치(float)
+    여백 오른쪽 : -1px
+    여백 아래 : -1px
 */
-ul.list {
+ul li {
   list-style: none;
-  margin: 0;
   padding: 0;
-  border-bottom: 1px solid #ccc;
+  margin: 0;
+  border: 1px solid #ccc;
 }
 
 .tab-button {
   padding: 10px 20px;
   color: gray;
   cursor: pointer;
-  margin-right: -1px;
-  margin-bottom: -1px;
   float: left;
+  margin-bottom: -1px;
+  margin-right: -1px;
 }
 
-/* float 해제 */
+/* ul list float 해제 */
 ul.list::after {
   content: '';
   display: block;
   clear: both;
 }
 
+/* 
+  orange
+  바깥 여백 위 : 2px orange
+          오른쪽 : 1px #ccc
+          아래 : 1px white
+          왼쪽 : 1px #ccc
+  글자색 : black
+  안쪽 여백 위 : -2px
+*/
 .orange {
-  border-top: 2px solid orange;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid white;
-  border-left: 1px solid #ccc;
+  margin-top: 2px orange;
+  margin-right: 1px #ccc;
+  margin-bottom: 1px white;
+  margin-left: 1px #ccc;
   color: black;
   margin-top: -2px;
 }
 
+/* 
+  tab-content
+  안쪽 여백 10px
+  안 보이게 설정
+*/
 .tab-content {
   padding: 10px;
   display: none;
 }
 
+/* show 가 생기면 보이게 */
 .show {
   display: block;
 }

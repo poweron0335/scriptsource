@@ -40,14 +40,22 @@
     });
 
     // 사칙연산
-    const button2 = document.querySelector("body div:nth-child(2) input[type='button']"); // body 안에 div 두번째 자식 안에 button
+    // button2 찾아오기 (body 안에 div 두번째 자식 안에 button)
+    const button2 = document.querySelector('body div:nth-child(2) input[type=button]');
+    // button2 클릭 이벤트 활성화
     button2.addEventListener('click', () => {
+      // num3 값 Number 형태로 가져오기
       const num3 = Number(document.querySelector('#num3').value);
+      // num4 값 Number 형태로 가져오기
       const num4 = Number(document.querySelector('#num4').value);
-      const op = document.querySelector("select[name='op']");
+      // op 값 가져오기 name으로
+      const op = document.querySelector('select[name = op]');
+      // result2 값 가져오기
       const result2 = document.querySelector('#result2');
 
       // op : +, -, *, /
+      // 사칙연산 기능을 만들어라
+      // switch 구문 사용
 
       switch (op.value) {
         case '+':
@@ -55,11 +63,9 @@
           break;
         case '-':
           result2.value = num3 - num4;
-
           break;
         case '*':
           result2.value = num3 * num4;
-
           break;
         case '/':
           result2.value = num3 / num4;
